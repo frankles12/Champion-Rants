@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="hover.css">
+    <!-- Import Custom CSS -->
+
+    <meta charset="UTF-8">
+    <title>Champion Reviews</title>
+</head>
+<body>
+<div class="wrapper">
+<a class="add-button btn-floating btn-large waves-effect waves-light pulse modal-trigger button-styles" data-target="modal1"><i class='material-icons'>add</i></a>
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <h4>Add a champion rant!</h4>
+        <div class="row">
+            <form class="col s12" id="add-form" method="post">
+                <div class="row">
+                    <div class="input-field col l12">
+                        <input placeholder="Ex: Teemo" id="Title" name="Title" type="text" class="validate">
+                        <label for="Title">Champion Name</label>
+                    </div>
+                    <div class="input-field col l12">
+                        <textarea placeholder="Ex: Teemo is the best..." id="Description" name="Description" type="text" class="materialize-textarea"></textarea>
+                        <label for="Description">Rant Area!</label>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a type="submit" id="submit-rant" value="Submit Rant!"class="modal-action modal-close waves-effect waves-green btn-flat">Submit Rant</a>
+    </div>
+</div>
+
+<!-- Chart Modal -->
+
+<a id="chart-button" class="waves-effect waves-light btn hvr-float-shadow modal-trigger button-styles" data-target="modal2">Data Visualization</a>
+<div id="modal2" class="modal">
+    <div class="modal-content chart-container">
+        <canvas id="myChart"></canvas>
+    </div>
+    <div class="modal-footer">
+        <a type="submit" id="close-chart" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col l12 title-header center">
+        <h1>Champion Rants</h1>
+    </div>
+    <p class="col l12 sub-header center">
+        A place for summoners to discuss anything and everything about their favorite League of Legends champions!
+    </p>
+    <div class="col l12 hvr-hang center rants-button">
+        <a class="waves-effect waves-light btn button-styles" id="get-data">Jump into the Rants!</a>
+        <div id="loading"></div>
+    </div>
+    <div class="col l2 push-l10 filter-button">
+        <!-- Dropdown Trigger -->
+        <a class='dropdown-button btn button-styles hvr-float-shadow' href='#' data-activates='dropdown1'>Filter Rants</a>
+
+        <!-- Dropdown Structure -->
+        <ul id='dropdown1' class='dropdown-content button-styles'>
+            <li id="filter-name"><a href="#!">Name</a></li>
+            <li id="filter-recent"><a href="#!">Recent</a></li>
+            <li class="divider"></li>
+            <li id="filter-popular"><a href="#!">Who's the most ranted about?</a></li>
+        </ul>
+    </div>
+</div>
+    <div id="insert"></div>
+</div>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
